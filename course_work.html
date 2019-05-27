@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ambi Singh | Course Work</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #42413C;
+	background-image: url(images/background.jpg);
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	text-align: left;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #E9E9E9;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #E9E9E9;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	padding-bottom: 10px;
+	width: 300px;
+	padding-left: 20px;
+	background-color: #C1C1C1;
+}
+.content {
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	width: 900px;
+	text-align: center;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	background-color: #CCC;
+	text-align: center;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style>
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<meta name="Author" content="Ambi Singh" />
+<meta name="keyword" content="Ambi's ePortfolio" />
+<meta name="description" content="Story of my Ambi Singh" />
+<link href="css/eportfolio_su.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><!-- end .header --><img src="images/banner.jpg" alt="banner" width="960" height="200" border="0" usemap="#Map" />
+    <map name="Map" id="Map">
+      <area shape="rect" coords="7,3,960,198" href="index.html" />
+    </map>
+    <ul id="Menu" class="MenuBarHorizontal">
+      <li><a href="index.html">Home</a>      </li>
+      <li><a href="bio.html">Biograhpy</a></li>
+      <li><a href="course_work.html">Couse Work</a></li>
+      <li><a class="MenuBarItemSubmenu" href="portfolio.html">Portfolio</a>
+        <ul>
+          <li><a href="dreamweaver.html">Dreamweaver</a>          </li>
+          <li><a href="html5.html">HTML5</a></li>
+</ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <h1>&nbsp;</h1>
+    <h1 class="page_title">Course Work</h1>
+  </div>
+  <div class="content">
+    <table width="95%">
+      <tr>
+        <th width="35%" valign="top" scope="col"><span class="sidebar_title"><a name="back1" id="back2"></a>Computer Engineering Technology</span></th>
+        <th width="30" valign="top" scope="col"><span class="sidebar_title">Computer Technology </span></th>
+        <th width="30" valign="top" scope="col"><span class="sidebar_title">Health Information Technology</span></th>
+      </tr>
+      <tr>
+        <td width="35%" valign="top"><p><span class="sidebar_p"><a href="#ac_circuit">AC Cirucuits</a></span></p>
+          <p class="sidebar_p"><a href="#dc_circuit">DC Circuits</a></p>
+          <p class="sidebar_p"> <a href="#intro_electro">Intro. to Electro-Mechanical System </a></p>
+          <p class="sidebar_p"><a href="#Elect1">Electronics 1 </a></p>
+          <p class="sidebar_p"><a href="#elect2">Electronics 2</a></p>
+        <p><span class="sidebar_p"><a href="#embedded">Embedded Processors</a></span></p></td>
+        <td width="30" valign="top"><p><a href="#intro_pro">Introduction to Programming Logic and C++</a></p>
+          <p><a href="#net1">Networking 1 &amp; 2</a></p>
+          <p><a href="#bus">Business Applications</a></p>
+          <p><a href="#intro_windows">Intro to Windows Operating Systems</a></p>
+          <p><a href="#enterp">Enterprise Datebase Management</a></p>
+        <p><a href="#web1">Web Design 1</a></p></td>
+        <td width="30" valign="top"><p><a href="#intro_us">Intro to US Healthcare</a></p>
+          <p><a href="#med_term">Medical Terminoloy</a></p>
+          <p><a href="#healthcare">Intro to HIT &amp; Healthcare Databases</a></p>
+          <p><a href="#elect_health">Electronic Health Records</a></p>
+          <p><a href="#med_coding">Medical Coding, Classification and Communication</a></p>
+        <p> <a href="#healthcare_com">Healthcare Compliance </a></p></td>
+      </tr>
+      <tr>
+        <td colspan="3" valign="top"><hr /></td>
+      </tr>
+      <tr>
+        <td height="37" colspan="2" class="sidebar_title"><a name="back4" id="back4"></a>Softwares</td>
+        <td class="sidebar_title">Skills</td>
+      </tr>
+      <tr>
+        <td width="35%" valign="top"><p><a href="#mutisim">NI MutiSim</a></p>
+          <p><a href="#packet">Cisco Packet Tracer</a></p>
+          <p><a href="#photoshop">Adobe Photoshop</a></p>
+        <p><a href="#dreamweaver">Adobe Dreamweaver cs5.5</a></p></td>
+        <td width="30" valign="top"><p><a href="#wireshark">WireShark</a></p>
+        <p><a href="#office">Microsoft Office Suit, and Visio</a></p></td>
+        <td width="30" valign="top"><p>Boot/Updating Windows OS</p>
+<p>Troubleshooting/ diagnose Windows xp/7/8/10 </p>
+        <p> Installation, configuration, maintenance, and repair of hardware and software </p></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <h1><span class="sidebar_title">Computer Engineering Technology</span></h1>
+    <p><span class="course_title"><a name="ac_circuit" id="ac_circuit"></a>Ac Circiuts</span> - Continuation of topics in EE110 with emphasis on basic AC circuit concepts, such as: capacitors, inductors, generation of single-phase alternating potential; average and RMS values of sinusoidal waveforms; phasers; power in AC circuits; application of general AC circuit analysis. Topics reviewed and reinforced in accompanying laboratory.<br />
+      <span class="back_to_top"><a href="#back1">Back to top</a></span><br />
+    </p>
+<p><span class="course_title"><a name="dc_circuit" id="dc_circuit"></a>Dc Circuit</span> - Introduction to basic DC circuit theory. Topics include a study of SI units; Ohm’s Law and Kirchhoff’s Law; series, parallel, and series-parallel circuits, power and energy relations. Also Thevenin’s, Norton’s and Maximum Power Theorems. Topics reviewed and reinforced in the accompanying laboratory. Prerequisites: Pass placement testing or complete MA105 with a GPA of at least 2.00. <br />
+  <a href="#back1" class="back_to_top">Back to top</a>  <br />
+</p>
+    <p class="sidebar_p"><span class="course_title"><a name="intro_electro" id="intro_electro"></a>Intro. to Electro-Mechanical System</span> - Fundamental principles will be applied to analyze simple electro-mechanical systems. Excel will be used to explore variations in parameters. Word will be used to document results and PowerPoint used in developing presentations.   The course may include electrical components, sensors, or motors. <br />
+      <a href="#back1" class="back_to_top">Back to top</a>      <br />
+    </p>
+    <p class="sidebar_p"><span class="course_title"><a name="Elect1" id="Elect1"></a>Electronics 1</span> - Basic electronics including energy levels and bands, semiconductor construction, electron-hole conduction characteristics and areas of application of various bipolar semiconductor devices. Application of diodes and rectifier circuits and filters. Transistor operation analysis for common emitter configurations. Topics include DC biasing arrangements, stabilization methods for DC operating point and AC gain, input impedance and output impedance.<br />
+      <span class="back_to_top"><span class="back_to_top"><a href="#back1" class="back_to_top">Back to top</a></span></span> <br />
+    </p>
+    <p class="sidebar_p"><span class="course_title"><a name="elect2" id="elect2"></a>Electronics 2</span> - This course will analyze bipolar differential amplifiers, operational amplifiers, feedback, class A, B, and C power amplifiers, and single stage FET amplifiers.  The advantages and disadvantages of each will be discussed, including costs. <br />
+      <a href="#back1" class="back_to_top">Back to top</a>      <br />
+    </p>
+    <p><span class="course_title"><a name="embedded" id="embedded"></a>Embedded Processors </span>- This course will analyze bipolar differential amplifiers, operational amplifiers, feedback, class A, B, and C power amplifiers, and single stage FET amplifiers.  The advantages and disadvantages of each will be discussed, including costs. <br />
+      <a href="#back1" class="back_to_top">Back to top</a>      <br />
+    </p>
+    <h1><span class="sidebar_title">Computer Technology</span></h1>
+    <p><span class="course_title"><a name="intro_pro" id="intro_pro"></a>Introduction to Programming Logic and C++</span> - This course is an introduction to problem solving and program design using the procedural aspects of the C++ programming language. Students are introduced to programming logic and design using visual and icon-based programming languages. The fundamentals of the C++ programming language are introduced with the student expected to apply the programming and logic design methodology in solving programming problems. The MS Visual C++ Integrated Development Environment (IDE) is used as the primary development tool. <br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+    <p><span class="course_title"><a name="net1" id="net1"></a>Networking 1</span> - Students are introduced to computer networking concepts using the TCP/IP and OSI networking models. Topics covered include the TCP/IP application, transport, Internet and network access layers, and the OSI layers and their functions.  The fundamentals of LANs, including Ethernet data link protocols and basic cabling, are covered. This course uses a practical, technical introduction to computer networking and provides a thorough foundation through concept mastery and hands on activities.<br />
+      <a href="#back1" class="back_to_top">Back to top</a>      <br />
+    </p>
+    <p><span class="course_title">Networking 2</span> - This course continues and builds upon the theory and hands-on laboratory work of CT265.  It focuses on the design and implementation of state-of-the-art network architectures and solutions for enterprise networks.  It provides an in-depth hands-on coverage of protocols and network technologies that are essential for building corporate infrastructures and seamlessly integrating them with the Internet. Special attention is paid to essential characteristics of high-quality e-business environments, such as scalability, reliability, and security. Hands-on laboratory work will be done on industry leading Cisco routers and switches. Students will develop and build small enterprise class networks.<br />
+      <a href="#back1" class="back_to_top">Back to top</a>      <br />
+    </p>
+<p><span class="course_title"><a name="bus" id="bus"></a>Business Applications</span> - In this course students will learn to use MS Excel and MS Access as effective tools for organizing, analyzing, and presenting data in the workplace.  Using MS Excel students will learn to enter data; move, copy and edit cells; construct tables and charts; and create and apply basic mathematical functions to spreadsheet data.  Using MS Access students will learn the basics of database design; how to create and modify database tables, forms, queries and reports; and complete a project designed to test the student’s grasp of proper relational database design and implementation of a design plan. <br />
+  <a href="#back1" class="back_to_top">Back to top</a><br />
+</p>
+    <p><span class="course_title"><a name="intro_windows" id="intro_windows"></a>Intro to Windows Operating Systems</span> - In this course students will learn to use MS Excel and MS Access as effective tools for organizing, analyzing, and presenting data in the workplace.  Using MS Excel students will learn to enter data; move, copy and edit cells; construct tables and charts; and create and apply basic mathematical functions to spreadsheet data.  Using MS Access students will learn the basics of database design; how to create and modify database tables, forms, queries and reports; and complete a project designed to test the student’s grasp of proper relational database design and implementation of a design plan.<br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+    <p><span class="course_title"><a name="enterp" id="enterp"></a>Enterprise Datebase Management</span> - This course provides students with an understanding of the issues in managing enterprise database systems as an essential organizational resource. Topics include the enterprise data architecture components, data storage configurations, and information retrieval methods. The course expands from the relational model to the multidimensional model, object-relational techniques, and Web-accessed data.  Oracle databases serve as the primary tools for use in the course. <br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+    <p><a name="web1" id="web1"></a><span class="course_title">Web Design 1: HTML5 &amp; Dreamweaver</span> - Students learn how to design and develop websites using HTML and Dreamweaver. Students will create Web pages utilizing forms, frames, cascading work sheets, links and images. Students will reinforce the skills learned in this course through the design, development and publishing of their own website. <br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+<h3><span class="sidebar_title">Health Information Technology</span></h3>
+    <p><span class="course_title"><a name="intro_us" id="intro_us"></a>Intro to US Healthcare</span> - This course provides an introduction to the multiple systems that define, describe, and shape the delivery of healthcare in the United States.  Using case studies and presentations of major issues, this course will give the learner an appreciation of the dilemma confronting policy makers, providers, and patients: how to balance cost, quality, and access.  We will examine specific healthcare issues such as access and disparity, healthcare professions, facilities, managed care organizations, and government healthcare programs.  We will also discuss policy changes impacting on American healthcare in the past century. <br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+    <p><span class="course_title"><a name="med_term" id="med_term"></a>Medical Terminoloy</span> - This course is designed to introduce the student to medical terms, including roots, prefixes, and suffixes, with emphasis on spelling, definition and pronunciation.  This course introduces the student to the basic rules for interpreting, constructing, and spelling medical terms.  Emphasis is upon learning word roots, prefixes and suffixes and how they are combined rather than learning each individual term. <br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+    <p><span class="course_title"><a name="intro_hit" id="intro_hit"></a>Intro to HIT</span> - This course is designed to explore the use of information systems in healthcare. Students will be introduced to the information systems and their applications in healthcare.  The fundamentals of information systems, including Electronic Health Record, will be explored.  Students will become familiar with information systems used for managerial and clinical support. <br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+    <p><span class="course_title">Healthcare Database Management</span> - This course further develops database management concepts that deal with installation of DBMS software in hospital settings.  Students are given hands-on experience with building and using healthcare databases, including managing users, physical storage, and database performance.<br />
+      <a href="#back1" class="back_to_top">Back to top</a><br />
+    </p>
+<p><span class="course_title"><a name="elect_health" id="elect_health"></a>Electronic Health Records</span> - This course provides a practical experience with a laboratory component (utilizing the VistA for Education program) that will address approaches to assessing, selecting, and configuring Electronic Health Records to meet the specific needs of customers and end-users.  In addition, this course provides an overview of the most popular vendor systems highlighting the features of each as they would relate to practical deployments, and noting differences between the systems.<br />
+  <a href="#back1" class="back_to_top">Back to top</a><br />
+</p>
+<p><span class="course_title"><a name="med_coding" id="med_coding"></a>Medical Coding, Classification and Communication</span> - This course introduces students to the study and practice of procedural medical coding using ICD-9-CM and ICD-10-CM (Revisions 9 and 10 of the International Classification of Diseases), and CPT (Current Procedural Terminology). Topics include ICD and CPT coding rules, conventions, and guidelines in complex case studies. Additional topics include the investigation of government regulations and changes in healthcare reporting. <br />
+  <a href="#back1" class="back_to_top">Back to top</a><br />
+</p>
+    <p> <span class="course_title"><a name="healthcare_com" id="healthcare_com"></a>Healthcare Compliance</span> - This course will cover the fundamentals of healthcare compliance administration from an IT perspective.  A major focus of the course will be a thorough understanding of the HIPAA privacy laws as related to the role of HIT professionals.  Specific topics include network and email security as related to healthcare compliance under HIPAA.<br />
+    <a href="#back1" class="back_to_top">Back to top</a></p>
+    <h2>Softwares</h2>
+    <p><a name="mutisim" id="mutisim"></a><span class="course_title">NI MutiSim</span> -  Industry-standard, best-in-class SPICE simulation environment. It is the cornerstone of the NI circuits teaching solution to build expertise through practical application in designing, prototyping, and testing electrical circuits.</p>
+    <p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span></p>
+    <p><a name="packet" id="packet"></a><span class="course_title">Cisco Packet Tracer</span> - A network simulation program that allows students to experiment with network behavior and ask &ldquo;what if&rdquo; questions. As an integral part of the Networking Academy comprehensive learning experience, Packet Tracer provides simulation, visualization, authoring, assessment, and collaboration capabilities and facilitates the teaching and learning of complex technology concepts.</p>
+    <p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span><a href="#back1" class="back_to_top"></a></p>
+    <p><a name="photoshop" id="photoshop"></a><span class="course_title">Adobe Photoshop</span> - A raster graphics editor developed and published by Adobe Systems</p>
+    <p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span><a href="#back1" class="back_to_top"></a></p>
+    <p><a name="dreamweaver" id="dreamweaver"></a><span class="course_title">Adobe Dreamweaver cs5.5</span> - A proprietary web development tool developed by Adobe Systems. Dreamweaver was created by Macromedia in 1997, and was maintained by them until Macromedia was acquired by Adobe Systems in 2005.</p>
+    <p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span><a href="#back1" class="back_to_top"></a></p>
+<p><a name="wireshark" id="wireshark"></a><span class="course_title">WireShark</span> -  A free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education. </p>
+<p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span><a href="#back1" class="back_to_top"></a></p>
+    <p><a name="office" id="office"></a><span class="course_title">Microsoft Office Suit</span> - ( Microsoft Word, Excel, Access, Publisher, Power Point, and Outlook) Each program serves a different purpose and is compatible with other programs included in the package.</p>
+    <p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span></p>
+    <p><span class="course_title">Microsoft Visio</span> - A diagramming and vector graphics application and is part of the Microsoft Office family.</p>
+<p><a href="#back4" class="back_to_top">Back to top</a><span class="back_to_top"></span><a href="#back1" class="back_to_top"></a></p>
+    <p><br />
+  </p>
+  <!-- end .content --></div>
+  <div class="footer">
+    <div class="footer">
+      <p class="footer"><a href="mailto:ambitamber@gmail.com">Ambi Singh</a><br />
+        CT121- SP2015<br />
+        <a href="http://www.bfit.edu/" target="_blank">Benjamin Franklin Institute of Technology</a></p>
+      <!-- end .footer -->
+    </div>
+    <p><a href="mailto:ambitamber@gmail.com"></a></p>
+  </div>
+<!-- end .container --></div>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("Menu", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+</body>
+</html>

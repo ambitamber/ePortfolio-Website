@@ -1,0 +1,30 @@
+.sidebar_title {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-align: center;
+}
+
+.page_title {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+.course_title {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+.back_to_top {
+	text-align: right;
+}
+.table_list {
+	text-align: right;
+}
+.header_h5 {
+	text-align: center;
+	font-size: 14px;
+}
